@@ -4,7 +4,7 @@ import {HttpErrorResponse} from '@angular/common/http';
 
 
 export const LOAD_BEERLIST = 'LOAD_BEERLIST';
-export const  LOAD_BEERLIST_SUCCESS = 'LOAD_BEERLIST_SUCCESS';
+export const LOAD_BEERLIST_SUCCESS = 'LOAD_BEERLIST_SUCCESS';
 export const LOAD_BEERLIST_FAIL = 'LOAD_BEERLIST_FAIL';
 
 

@@ -8,5 +8,5 @@ export interface AppState {
 
 export const reducers: ActionReducerMap<AppState> = {
   beerList: fromBeerList.beerListReducer
-}
+};
 
