@@ -10,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: root
 })
 
-export class ListService {
+export class BeerListService {
 
   constructor(private http: HttpClient) {
 
