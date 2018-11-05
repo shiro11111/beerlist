@@ -25,5 +25,4 @@ export class BeerListEffects {
       catchError((error: HttpErrorResponse) => of(new LoadBeerListFail(error)))
     ))
   );
-
 }
