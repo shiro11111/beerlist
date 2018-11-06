@@ -22,4 +22,8 @@ export class BeerListService {
       map((list: Item[]) => list[0])
     );
   }
+
+  loadList(): Observable<Item[]> {
+    return this.http.get<Item[]>('https://api.punkapi.com/v2/beers');
+  }
 }

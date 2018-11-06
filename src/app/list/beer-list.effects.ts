@@ -5,7 +5,7 @@ import {BeerListService} from './beer-list.service';
 import {ofType} from '@ngrx/effects';
 import {catchError, map, switchMap} from 'rxjs/operators';
 import {Item} from '../models/item';
-import {LoadBeerListFail, LoadBeerListSuccess} from './beer-list.actions';
+import {LoadBeerFail, LoadBeerListFail, LoadBeerListSuccess, LoadBeerSuccess} from './beer.actions';
 import {of} from 'rxjs';
 
 @Injectable()
@@ -19,9 +19,17 @@ export class BeerListEffects {
 
 
   @Effect() loadItem$ = this.actions$.pipe(
-    ofType('LOAD_BEERLIST'),
+    ofType('LOAD_BEER'),
     switchMap(() => this.service.loadItem().pipe(
-      map((res: Item) => new LoadBeerListSuccess(res)),
+      map((res: Item) => new LoadBeerSuccess(res)),
+      catchError((error: HttpErrorResponse) => of(new LoadBeerFail(error)))
+    ))
+  );
+
+  @Effect() loadList$ = this.actions$.pipe(
+    ofType('LOAD_BEERLIST'),
+    switchMap(() => this.service.loadList().pipe(
+      map((res: Item[]) => new LoadBeerListSuccess(res)),
       catchError((error: HttpErrorResponse) => of(new LoadBeerListFail(error)))
     ))
   );

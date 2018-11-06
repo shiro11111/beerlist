@@ -1,11 +1,14 @@
-<!--<script src="beer-list.component.ts"></script>-->
+<!--<script src="beer-item.component.ts"></script>-->
 <!--<pre>{{beer$ | async | json}}</pre>-->
 
 
+<!--<div class="container">-->
+<!--<mat-card class="card"> {{ (beer$ | async)?.name }}</mat-card>-->
+<!--</div>-->
 
-<router-outlet></router-outlet>
 
+<ng-container *ngIf="(list$ | async)">
+  <mat-card class="card" *ngFor="let item of (list$ | async)">{{ item?.name }}</mat-card>
+</ng-container>
 
-<div class="container">
-  <mat-card class="card"> {{ (beer$ | async)?.name }}</mat-card>
-</div>
+<pre>{{list$ | async | json}}</pre>

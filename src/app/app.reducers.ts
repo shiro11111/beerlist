@@ -3,10 +3,10 @@ import * as fromBeerList from './list/beer-list.reducers';
 import {ActionReducerMap} from '@ngrx/store';
 
 export interface AppState {
-  beerList: fromBeerList.BeerListState;
+  beerState: fromBeerList.BeerState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
-  beerList: fromBeerList.beerListReducer
+  beerState: fromBeerList.beerListReducer
 };
 

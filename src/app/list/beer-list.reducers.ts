@@ -1,31 +1,58 @@
-import * as ListActions from './beer-list.actions';
 import {Item} from '../models/item';
+import {
+  BeerActions,
+  LOAD_BEER,
+  LOAD_BEER_FAIL,
+  LOAD_BEER_SUCCESS,
+  LOAD_BEERLIST,
+  LOAD_BEERLIST_FAIL,
+  LOAD_BEERLIST_SUCCESS
+} from './beer.actions';
 
 
-export interface BeerListState {
-  list: Item;
+export interface BeerState {
+  item: Item;
+  list: Item[];
+
 }
 
-const initialState: BeerListState = {
-  list: null
+const initialState: BeerState = {
+  item: null,
+  list: []
 };
 
-export function beerListReducer(state = initialState, action: ListActions.BeerListActions) {
+export function beerListReducer(state = initialState, action: BeerActions) {
   switch (action.type) {
-    case ListActions.LOAD_BEERLIST:
+    case LOAD_BEER:
       return {
         ...state
       };
 
-    case ListActions.LOAD_BEERLIST_SUCCESS:
+    case LOAD_BEER_SUCCESS:
       return {
         ...state,
-        list: action.payload
+        item: action.payload
       };
 
-    case ListActions.LOAD_BEERLIST_FAIL:
+    case LOAD_BEER_FAIL:
       return {
         ...state,
+      };
+    case LOAD_BEERLIST:
+      return {
+        ...state,
+        item: { ...state.item },
+        list: { ...state.list }
+      };
+    case LOAD_BEERLIST_SUCCESS:
+      return {
+        ...state,
+        item: { ...state.item },
+        list: action.payload
+      };
+    case LOAD_BEERLIST_FAIL:
+      return {
+        ...state
       };
     default:
       return state;
