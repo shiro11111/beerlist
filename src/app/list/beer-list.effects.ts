@@ -14,8 +14,7 @@ export class BeerListEffects {
   constructor(
     private actions$: Actions,
     private service: BeerListService
-  ) {
-  }
+  ) {}
 
 
   @Effect() loadItem$ = this.actions$.pipe(
