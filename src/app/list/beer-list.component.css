@@ -4,4 +4,5 @@ ng-container {
 
 .card {
   margin-bottom: 15px;
+  background-color: #eee;
 }
