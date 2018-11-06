@@ -25,5 +25,4 @@ export class LoadBeerListFail implements Action {
   constructor(public payload: HttpErrorResponse) {}
 }
 
-
 export type BeerListActions = LoadBeerList | LoadBeerListSuccess | LoadBeerListFail;

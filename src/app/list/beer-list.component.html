@@ -1,0 +1,11 @@
+<!--<script src="beer-list.component.ts"></script>-->
+<!--<pre>{{beer$ | async | json}}</pre>-->
+
+
+
+<router-outlet></router-outlet>
+
+
+<div class="container">
+  <mat-card class="card"> {{ (beer$ | async)?.name }}</mat-card>
+</div>

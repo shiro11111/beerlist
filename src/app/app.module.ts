@@ -10,6 +10,9 @@ import {reducers} from './app.reducers';
 import {BeerListService} from './list/beer-list.service';
 import {HttpClientModule} from '@angular/common/http';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { MatCardModule } from '@angular/material';
 
 
 @NgModule({
@@ -21,6 +24,9 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    [BrowserAnimationsModule],
+    [MatButtonModule, MatCheckboxModule],
+    MatCardModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({}),
     EffectsModule.forRoot([

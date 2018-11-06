@@ -14,7 +14,7 @@ import {LoadBeerList} from './beer-list.actions';
   styleUrls: ['./beer-list.component.css']
 })
 export class BeerListComponent implements OnInit {
-  list$: Observable<Item>;
+  beer$: Observable<Item>;
 
   constructor(private store: Store<AppState>) {
   }
@@ -22,7 +22,7 @@ export class BeerListComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new LoadBeerList());
 
-    this.list$ = this.store.pipe(
+    this.beer$ = this.store.pipe(
       select('beerList'),
       map((state: BeerListState) => state && state.list)
     );
