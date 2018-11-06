@@ -11,7 +11,7 @@ import {LoadBeerList} from './beer.actions';
 @Component({
   selector: 'app-list',
   templateUrl: './beer-list.component.html',
-  styleUrls: ['./beer-list.component.css']
+  styleUrls: ['./beer-list.component.scss']
 })
 export class BeerListComponent implements OnInit {
   beer$: Observable<Item>;
