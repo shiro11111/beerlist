@@ -12,9 +12,7 @@ import {HttpClient} from '@angular/common/http';
 
 export class BeerListService {
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
 
   loadItem(): Observable<Item> {
     return this.http.get('https://api.punkapi.com/v2/beers/1').pipe(
