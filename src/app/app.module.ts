@@ -13,12 +13,13 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { MatCardModule } from '@angular/material';
-
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BeerListComponent
+    BeerListComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

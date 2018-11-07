@@ -7,6 +7,7 @@ import {select} from '@ngrx/store';
 import {map} from 'rxjs/operators';
 import {BeerState} from './beer-list.reducers';
 import {LoadBeerList} from './beer.actions';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -17,7 +18,8 @@ export class BeerListComponent implements OnInit {
   beer$: Observable<Item>;
   list$: Observable<Item[]>;
 
-  constructor(private store: Store<AppState>) {
+  constructor(private store: Store<AppState>,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -32,6 +34,12 @@ export class BeerListComponent implements OnInit {
       select('beerState'),
       map((state: BeerState) => state && state.list)
     );
+  }
+
+  navigateToDetails(id: number): void {
+    if (id) {
+      this.router.navigate(['details']);
+    }
   }
 
 }
