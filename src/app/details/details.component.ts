@@ -35,9 +35,10 @@ export class DetailsComponent implements OnInit, OnDestroy {
     });
 
     this.details$ = this.store.pipe(
-      select('BeerDetailsState'),
+      select('detailsState'),
       map((state: BeerDetailsState) => state && state.item)
     );
+
   }
 
   ngOnDestroy(): void {
