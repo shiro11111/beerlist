@@ -12,6 +12,6 @@ export class BeerDetailsService {
   constructor(private http: HttpClient) {}
 
   loadDetails(id: number): Observable<Item> {
-    return this.http.get(` https://api.punkapi.com/v2/beers/${id}`);
+    return this.http.get<Item>(` https://api.punkapi.com/v2/beers/${id}`);
   }
 }

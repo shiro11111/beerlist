@@ -39,7 +39,7 @@ export class BeerListComponent implements OnInit {
 
   navigateToDetails(id: number): void {
     if (id) {
-      this.router.navigate([`details/${id}`], { relativeTo: this.route });
+      this.router.navigate([`../details/${id}`], { relativeTo: this.route });
     }
   }
 

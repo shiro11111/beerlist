@@ -14,6 +14,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { MatCardModule } from '@angular/material';
 import { DetailsComponent } from './details/details.component';
+import {BeerDetailsEffects} from './details/beer-details.effects';
+import {BeerDetailsService} from './details/beer-details.service';
 
 @NgModule({
   declarations: [
@@ -31,10 +33,11 @@ import { DetailsComponent } from './details/details.component';
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({}),
     EffectsModule.forRoot([
-      BeerListEffects
+      BeerListEffects,
+      BeerDetailsEffects
     ])
   ],
-  providers: [BeerListService],
+  providers: [BeerListService, BeerDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

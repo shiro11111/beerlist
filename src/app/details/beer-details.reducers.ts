@@ -8,7 +8,7 @@ export interface BeerDetailsState {
 
 const initialState: BeerDetailsState = {
   item: null
-}
+};
 
 export function beerDetailsReducer(state = initialState, action: BeerDetailsActions) {
   switch (action.type) {

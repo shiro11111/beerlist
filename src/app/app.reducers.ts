@@ -5,12 +5,11 @@ import * as fromBeerDetails from './details/beer-details.reducers';
 
 export interface AppState {
   beerState: fromBeerList.BeerState;
-  detailsState: fromBeerDetails;
+  detailsState: fromBeerDetails.BeerDetailsState;
 }
 
 export const reducers: ActionReducerMap<AppState> = {
   beerState: fromBeerList.beerListReducer,
   detailsState: fromBeerDetails.beerDetailsReducer
-
 };
 
