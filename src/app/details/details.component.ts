@@ -26,9 +26,9 @@ export class DetailsComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     this.route.params.pipe(
+      first(),
       filter((params: Params) => params && params.id),
       map((params: Params) => params.id),
-      first(),
       takeUntil(this.destroyed$)
     ).subscribe((id: number) => {
       this.store.dispatch(new LoadBeerDetails(id));

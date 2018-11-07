@@ -19,7 +19,7 @@ export function beerDetailsReducer(state = initialState, action: BeerDetailsActi
     case LOAD_BEER_DETAILS_SUCCESS:
       return {
         ...state,
-        item: action.payload
+        item: action.payload as Item
       };
     case LOAD_BEER_DETAILS_FAIL:
       return {
